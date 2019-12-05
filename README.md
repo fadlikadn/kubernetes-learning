@@ -37,3 +37,22 @@ Get Detail Description of Nodes : `kubectl describe nodes`
 
 ### Reference
 - https://www.packtpub.com/application-development/kubernetes-aws
+
+Build and launching Kubernetes
+- Launching nginx in a pod, run `kubectl create deployment web --image nginx`
+- Get Events, run `kubectl get events`
+- Deploy pod, run `kubectl get deploy`
+- Get Pods infor, run `kubectl get pods` and `kubectl get pods -o wide` for detail
+- Expose Pods, run `kubectl expose deployment/web --port 80 --type NodePort`
+- Delete exposed web if exist, run `kubectl delete svc/web`
+- List services in pods, run `kubectl get svc`
+- Check minikube ip, run `minikube ip`
+- Open IP and port that listed in 2 command above, example : `172.17.44.85:32417`
+- Delete pods, example run `kubectl delete pod web-d86c95cc9-q6klk`, list pod can be get using run `kubectl get pods`
+- Replica Pods (example), run `kubectl scale deployment/web --replicas=2`
+
+- Generate YAML file, run `kubectl create deployment web --image=nginx --dry-run -o yaml`
+- Delete Deploy Web, run `kubectl delete deploy/web`
+- Deploy web using yaml, run `kubectl apply -f .\deployment.yaml` (filename), check with get deploy
+
+
